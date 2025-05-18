@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "csvtojson": "^2.0.10",
+    "dotenv": "^16.5.0",
     "mongodb": "^6.16.0"
   }
 }

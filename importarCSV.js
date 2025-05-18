@@ -5,7 +5,7 @@ const path = require('path');
 const csvtojson = require('csvtojson');
 const { MongoClient } = require('mongodb');
 
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGODB_URL_DEV;
 const client = new MongoClient(uri);
 
 const archivosCSV = [
@@ -19,7 +19,7 @@ const archivosCSV = [
 async function importarDatos() {
   try {
     await client.connect();
-    const db = client.db();
+    const db = client.db('Petinder'); // el nombre de la base de datos que está en la URI
 
     for (const { archivo, colección } of archivosCSV) {
       const ruta = path.join(__dirname, archivo);
